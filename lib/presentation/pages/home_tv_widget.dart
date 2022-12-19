@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
+import 'package:ditonton/presentation/pages/tv/tv_nowplaying_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_popular_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_toprated_page.dart';
 import 'package:flutter/material.dart';
@@ -55,10 +56,11 @@ class _HomeTvState extends State<HomeTv> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Now Playing',
-              style: kHeading6,
-            ),
+            _buildSubHeading(
+                title: "Now Playing",
+                onTap: () {
+                  Navigator.pushNamed(context, NowPlayingTvPage.ROUTE_NAME);
+                }),
             Consumer<TvListNotifier>(builder: (context, data, child) {
               final state = data.nowPlayingState;
               if (state == RequestState.Loading) {
@@ -91,7 +93,7 @@ class _HomeTvState extends State<HomeTv> {
             _buildSubHeading(
                 title: "Top Rated",
                 onTap: () {
-                   Navigator.pushNamed(context, TopRatedTvPage.ROUTE_NAME);
+                  Navigator.pushNamed(context, TopRatedTvPage.ROUTE_NAME);
                 }),
             Consumer<TvListNotifier>(builder: (context, data, child) {
               final state = data.topRatedMoviesState;

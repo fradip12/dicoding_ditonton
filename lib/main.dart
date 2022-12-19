@@ -8,6 +8,7 @@ import 'package:ditonton/presentation/pages/popular_movies_page.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_detail_page.dart';
+import 'package:ditonton/presentation/pages/tv/tv_nowplaying_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_popular_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_toprated_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
@@ -18,6 +19,7 @@ import 'package:ditonton/presentation/provider/popular_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/tv_detail_notifider.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
+import 'package:ditonton/presentation/provider/tv/tv_nowplaying_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/tv_popular_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/tv_toprated_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
@@ -66,6 +68,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => di.locator<TopRatedTvNotifier>(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<NowPlayingTvNotifier>(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -105,6 +110,11 @@ class MyApp extends StatelessWidget {
             case TopRatedTvPage.ROUTE_NAME:
               return MaterialPageRoute(
                 builder: (_) => TopRatedTvPage(),
+                settings: settings,
+              );
+            case NowPlayingTvPage.ROUTE_NAME:
+              return MaterialPageRoute(
+                builder: (_) => NowPlayingTvPage(),
                 settings: settings,
               );
             case SearchPage.ROUTE_NAME:

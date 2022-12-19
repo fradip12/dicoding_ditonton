@@ -2,7 +2,6 @@ import 'package:ditonton/data/models/genre_model.dart';
 import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
-
 class TvDetailResponse extends Equatable {
   TvDetailResponse({
     this.adult,
@@ -244,9 +243,7 @@ class SeasonModel extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        "air_date": airDate == null
-            ? null
-            : "${airDate?.year.toString().padLeft(4, '0')}-${airDate?.month.toString().padLeft(2, '0')}-${airDate?.day.toString().padLeft(2, '0')}",
+        "air_date": airDate == null ? null : airDate!.toIso8601String(),
         "episode_count": episodeCount == null ? null : episodeCount,
         "id": id == null ? null : id,
         "name": name == null ? null : name,
