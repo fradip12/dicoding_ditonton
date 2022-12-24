@@ -122,31 +122,7 @@ class SearchPage extends StatelessWidget {
                   );
                 }
               }),
-            // Consumer<MovieSearchNotifier>(
-            //   builder: (context, data, child) {
-            //     if (data.state == RequestState.Loading) {
-            //       return const Center(
-            //         child: CircularProgressIndicator(),
-            //       );
-            //     } else if (data.state == RequestState.Loaded) {
-            //       final result = data.searchTVResult;
-            //       return Expanded(
-            //         child: ListView.builder(
-            //           padding: const EdgeInsets.all(8),
-            //           itemBuilder: (context, index) {
-            //             final movie = data.searchTVResult[index];
-            //             return TvCard(movie);
-            //           },
-            //           itemCount: result.length,
-            //         ),
-            //       );
-            //     } else {
-            //       return Expanded(
-            //         child: Container(),
-            //       );
-            //     }
-            //   },
-            // ),
+          
           ],
         ),
       ),

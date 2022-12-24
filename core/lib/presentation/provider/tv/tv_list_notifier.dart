@@ -1,10 +1,5 @@
-import '../../../domain/entities/tv/tv.dart';
-
-import '../../../domain/usecases/tv/get_tv_toprated.dart';
 import 'package:flutter/material.dart';
 import 'package:core/core.dart';
-import '../../../domain/usecases/tv/get_tv_now_playing.dart';
-import '../../../domain/usecases/tv/get_tv_popular.dart';
 
 class TvListNotifier extends ChangeNotifier {
   var _nowPlayingMovies = <TV>[];

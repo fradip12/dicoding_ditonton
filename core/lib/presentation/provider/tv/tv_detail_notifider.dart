@@ -1,10 +1,4 @@
-import '../../../domain/entities/tv/tv.dart';
-import '../../../domain/entities/tv/tv_detail.dart';
-import '../../../domain/usecases/tv/get_tv_detail.dart';
-import '../../../domain/usecases/tv/get_tv_recommendations.dart';
-import '../../../domain/usecases/tv/get_tv_watchlist_status.dart';
-import '../../../domain/usecases/tv/tv_remove_watchlist.dart';
-import '../../../domain/usecases/tv/tv_save_watchlist.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:core/core.dart';
 

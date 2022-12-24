@@ -10,6 +10,16 @@ final locator = GetIt.instance;
 void init() {
   //Bloc
   locator.registerFactory(() => SearchBloc(locator(), locator()));
+  locator.registerFactory(
+    () => MovieDetailBloc(
+      getMovieDetail: locator(),
+      getMovieRecommendations: locator(),
+      getWatchListStatus: locator(),
+      saveWatchlist: locator(),
+      removeWatchlist: locator(),
+    ),
+  );
+  locator.registerFactory(() => RecommendationBloc(locator()));
   // provider movies
   locator.registerFactory(
     () => MovieListNotifier(
