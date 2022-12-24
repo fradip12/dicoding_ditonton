@@ -1,18 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/common/failure.dart';
-import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/tv/tv.dart';
-import 'package:ditonton/domain/usecases/get_watchlist_status.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_detail.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_recommendations.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_watchlist_status.dart';
-import 'package:ditonton/domain/usecases/tv/tv_remove_watchlist.dart';
-import 'package:ditonton/domain/usecases/tv/tv_save_watchlist.dart';
-import 'package:ditonton/presentation/provider/tv/tv_detail_notifider.dart';
+   
+   
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
+import 'package:core/core.dart';
 import '../../../dummy_data/dummy_objects.dart';
 import 'tv_detail_notifier_test.mocks.dart';
 

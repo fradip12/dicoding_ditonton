@@ -2,13 +2,10 @@
 // in ditonton/test/presentation/provider/tv/tv_popular_notifier_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i5;
+import 'dart:async' as _i4;
 
+import 'package:core/core.dart' as _i2;
 import 'package:dartz/dartz.dart' as _i3;
-import 'package:ditonton/common/failure.dart' as _i6;
-import 'package:ditonton/domain/entities/tv/tv.dart' as _i7;
-import 'package:ditonton/domain/repositories/tv_repository.dart' as _i2;
-import 'package:ditonton/domain/usecases/tv/get_tv_popular.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -28,7 +25,7 @@ class _FakeEither_1<L, R> extends _i1.Fake implements _i3.Either<L, R> {}
 /// A class which mocks [GetTvPopular].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetTvPopular extends _i1.Mock implements _i4.GetTvPopular {
+class MockGetTvPopular extends _i1.Mock implements _i2.GetTvPopular {
   MockGetTvPopular() {
     _i1.throwOnMissingStub(this);
   }
@@ -38,9 +35,9 @@ class MockGetTvPopular extends _i1.Mock implements _i4.GetTvPopular {
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakeTvRepository_0()) as _i2.TvRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, List<_i7.TV>>> execute() =>
+  _i4.Future<_i3.Either<_i2.Failure, List<_i2.TV>>> execute() =>
       (super.noSuchMethod(Invocation.method(#execute, []),
-              returnValue: Future<_i3.Either<_i6.Failure, List<_i7.TV>>>.value(
-                  _FakeEither_1<_i6.Failure, List<_i7.TV>>()))
-          as _i5.Future<_i3.Either<_i6.Failure, List<_i7.TV>>>);
+              returnValue: Future<_i3.Either<_i2.Failure, List<_i2.TV>>>.value(
+                  _FakeEither_1<_i2.Failure, List<_i2.TV>>()))
+          as _i4.Future<_i3.Either<_i2.Failure, List<_i2.TV>>>);
 }

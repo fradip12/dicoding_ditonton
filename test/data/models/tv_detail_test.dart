@@ -1,7 +1,5 @@
-import 'package:ditonton/data/models/genre_model.dart';
-import 'package:ditonton/data/models/tv/tv_detail_model.dart';
-import 'package:ditonton/domain/entities/genre.dart';
-import 'package:ditonton/domain/entities/tv/tv_detail.dart';
+
+import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../dummy_data/dummy_objects.dart';

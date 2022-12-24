@@ -1,14 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/tv/tv.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_now_playing.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_popular.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_toprated.dart';
-import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
+   
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
+import 'package:core/core.dart';
 import 'tv_list_notifier_test.mocks.dart';
 
 @GenerateMocks([
