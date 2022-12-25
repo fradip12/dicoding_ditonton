@@ -79,5 +79,3 @@ export 'package:core/utils/routes.dart';
 export 'package:core/utils/state_enum.dart';
 export 'package:core/utils/utils.dart';
 export 'package:core/presentation/bloc/movie/movie_detail_bloc/movie_detail_bloc.dart';
-export 'package:core/presentation/bloc/movie/recommendation_bloc/recommendation_bloc.dart';
-export 'package:core/presentation/bloc/movie/watchlist_bloc/watchlist_bloc.dart';
