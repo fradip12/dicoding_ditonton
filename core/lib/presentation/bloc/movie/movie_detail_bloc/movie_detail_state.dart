@@ -7,6 +7,13 @@ abstract class MovieDetailState extends Equatable {
   List<Object> get props => [];
 }
 
+class WatchlistDialog extends MovieDetailState {
+  final String message;
+  const WatchlistDialog(this.message);
+  @override
+  List<Object> get props => [message];
+}
+
 class MovieDetailEmpty extends MovieDetailState {}
 
 class MovieDetailLoading extends MovieDetailState {}
@@ -20,9 +27,13 @@ class MovieDetailError extends MovieDetailState {
 
 class MovieDetailLoaded extends MovieDetailState {
   final MovieDetail result;
+  final List<Movie> recommendations;
+  final bool isAddedToWatchlist;
   const MovieDetailLoaded(
     this.result,
+    this.recommendations,
+    this.isAddedToWatchlist,
   );
   @override
-  List<Object> get props => [result];
+  List<Object> get props => [result, recommendations, isAddedToWatchlist];
 }

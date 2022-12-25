@@ -1,4 +1,4 @@
-import 'package:core/core.dart';
+import 'package:core/export.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
@@ -19,7 +19,8 @@ void init() {
       removeWatchlist: locator(),
     ),
   );
-  locator.registerFactory(() => RecommendationBloc(locator()));
+  // locator.registerFactory(() => RecommendationBloc(locator()));
+  // locator.registerFactory(() => WatchlistBloc(locator(), locator(), locator()));
   // provider movies
   locator.registerFactory(
     () => MovieListNotifier(

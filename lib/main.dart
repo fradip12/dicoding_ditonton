@@ -1,5 +1,5 @@
 import 'package:about/about_page.dart';
-import 'package:core/core.dart';
+import 'package:core/export.dart';
 import 'package:ditonton/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (_) => di.locator<SearchBloc>()),
         BlocProvider(create: (_) => di.locator<MovieDetailBloc>()),
-        BlocProvider(create: (_) => di.locator<RecommendationBloc>())
-        
+        // BlocProvider(create: (_) => di.locator<RecommendationBloc>()),
+        // BlocProvider(create: (_) => di.locator<WatchlistBloc>())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
