@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:core/core.dart';
-
-import '../../provider/tv/tv_nowplaying_notifier.dart';
-import '../../widgets/tv_card_list.dart';
 
 class NowPlayingTvPage extends StatefulWidget {
   static const ROUTE_NAME = '/nowplaying-tv';
@@ -16,41 +14,44 @@ class _NowPlayingTvPageState extends State<NowPlayingTvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<NowPlayingTvNotifier>(context, listen: false)
-            .fetchNowPlaying());
+    context.read<TvListBloc>().add(OnLoadTvList());
+   
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Now Playing Tv Series'),
+        title: const Text('Now Playing Tv Series'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<NowPlayingTvNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<TvListBloc, TvListState>(
+          builder: (_, state) {
+            if (state is TvListInitial) {
+              return Container();
+            } else if (state is TvListLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is TvListLoaded) {
+              final data = state.nowplaying;
+              if (state.nowPlayingState == RequestState.Error) {
+                return const Text('Failed');
+              }
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final movie = data.movies[index];
+                  final movie = data[index];
                   return TvCard(movie);
                 },
-                itemCount: data.movies.length,
+                itemCount: data.length,
               );
             } else {
-              return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
-              );
+              return Text((state as MovieDetailError).message);
             }
           },
         ),
+        
       ),
     );
   }

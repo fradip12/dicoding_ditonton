@@ -1,4 +1,5 @@
-import '../../provider/tv/tv_toprated_notifier.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:core/core.dart';
@@ -16,9 +17,7 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<TopRatedTvNotifier>(context, listen: false)
-            .fetchTopRatedSeries());
+    context.read<TvListBloc>().add(OnLoadTvList());
   }
 
   @override
@@ -29,25 +28,28 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<TopRatedTvNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<TvListBloc, TvListState>(
+          builder: (_, state) {
+            if (state is TvListInitial) {
+              return Container();
+            } else if (state is TvListLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is TvListLoaded) {
+              final data = state.topRated;
+              if (state.topRatedState == RequestState.Error) {
+                return const Text('Failed');
+              }
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final movie = data.movies[index];
+                  final movie = data[index];
                   return TvCard(movie);
                 },
-                itemCount: data.movies.length,
+                itemCount: data.length,
               );
             } else {
-              return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
-              );
+              return Text((state as MovieDetailError).message);
             }
           },
         ),
