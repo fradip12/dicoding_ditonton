@@ -24,21 +24,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieListNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedMoviesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularMoviesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistMovieNotifier>(),
-        ),
+        // ChangeNotifierProvider(
+        //   create: (_) => di.locator<MovieListNotifier>(),
+        // ),
+        BlocProvider(create: (_) => di.locator<MovieListBloc>()),
+        // ChangeNotifierProvider(
+        //   create: (_) => di.locator<TopRatedMoviesNotifier>(),
+        // ),
+        // ChangeNotifierProvider(
+        //   create: (_) => di.locator<PopularMoviesNotifier>(),
+        // ),
+        // ChangeNotifierProvider(
+        //   create: (_) => di.locator<WatchlistMovieNotifier>(),
+        // ),
+        BlocProvider(create: (_) => di.locator<WatchlistBloc>()),
+        
         ChangeNotifierProvider(
           create: (_) => di.locator<TvListNotifier>(),
         ),
@@ -56,8 +56,6 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (_) => di.locator<SearchBloc>()),
         BlocProvider(create: (_) => di.locator<MovieDetailBloc>()),
-        // BlocProvider(create: (_) => di.locator<RecommendationBloc>()),
-        // BlocProvider(create: (_) => di.locator<WatchlistBloc>())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

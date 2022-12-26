@@ -26,32 +26,34 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: BlocBuilder<MovieDetailBloc, MovieDetailState>(
-      builder: (_, state) {
-        if (state is MovieDetailEmpty) {
-          return Container();
-        } else if (state is MovieDetailLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        } else if (state is MovieDetailLoaded) {
-          final movie = state.result;
-          final recommend = state.recommendations;
-          final status = state.isAddedToWatchlist;
-          return SafeArea(
-            child: DetailContent(
-              movie,
-              status,
-              recommend,
-            ),
-          );
-        } else if (state is WatchlistDialog) {
-          return const CircularProgressIndicator();
-        } else {
-          return Text((state as MovieDetailError).message);
-        }
-      },
-    ));
+    return Scaffold(
+      body: BlocBuilder<MovieDetailBloc, MovieDetailState>(
+        builder: (_, state) {
+          if (state is MovieDetailEmpty) {
+            return Container();
+          } else if (state is MovieDetailLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is MovieDetailLoaded) {
+            final movie = state.result;
+            final recommend = state.recommendations;
+            final status = state.isAddedToWatchlist;
+            return SafeArea(
+              child: DetailContent(
+                movie,
+                status,
+                recommend,
+              ),
+            );
+          } else if (state is WatchlistDialog) {
+            return const CircularProgressIndicator();
+          } else {
+            return Text((state as MovieDetailError).message);
+          }
+        },
+      ),
+    );
   }
 }
 

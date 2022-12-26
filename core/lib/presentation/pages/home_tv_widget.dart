@@ -1,15 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'top_rated_movies_page.dart';
-import 'tv/tv_nowplaying_page.dart';
-import 'tv/tv_popular_page.dart';
-import 'tv/tv_toprated_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:core/core.dart';
-
-import '../../domain/entities/tv/tv.dart';
-import '../provider/tv/tv_list_notifier.dart';
-import 'tv/tv_detail_page.dart';
 
 class HomeTv extends StatefulWidget {
   @override

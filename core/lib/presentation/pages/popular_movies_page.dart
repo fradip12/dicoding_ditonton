@@ -1,7 +1,6 @@
-import '../provider/popular_movies_notifier.dart';
-import '../widgets/movie_card_list.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:core/core.dart';
 
 class PopularMoviesPage extends StatefulWidget {
@@ -15,9 +14,7 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<PopularMoviesNotifier>(context, listen: false)
-            .fetchPopularMovies());
+    context.read<MovieListBloc>().add(OnLoadAll());
   }
 
   @override
@@ -28,25 +25,31 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<PopularMoviesNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
-              return Center(
+        child: BlocBuilder<MovieListBloc, MovieListState>(
+          builder: (_, state) {
+            if (state is MovieListEmpty) {
+              return Container();
+            } else if (state is MovieListLoading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is MovieListLoaded) {
+              final data = state.popular;
+              final _state = state.popularState;
+              if (_state == RequestState.Error) {
+                return const Text('Failed');
+              }
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final movie = data.movies[index];
+                  final movie = data[index];
                   return MovieCard(movie);
                 },
-                itemCount: data.movies.length,
+                itemCount: data.length,
               );
+            } else if (state is WatchlistDialog) {
+              return const CircularProgressIndicator();
             } else {
-              return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
-              );
+              return Text((state as MovieDetailError).message);
             }
           },
         ),

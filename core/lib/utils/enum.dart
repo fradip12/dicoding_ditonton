@@ -2,3 +2,4 @@ enum SearchType {
   MOVIES,
   TVSERIES,
 }
+
