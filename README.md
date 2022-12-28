@@ -2,6 +2,12 @@
 
 <img align="Right" alt="GIF" height="200px" src="profile.png" />
 
+##
+Flutter Developer Expert Class at dicoding.
+
+Ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh dicoding indonesia sebagai contoh proyek untuk kelas Menjadi developer expert.
+
+and below is my code for Flutter developer expert final submission
 
 ## 🔥 CI/CD Status
 This below are the build status of code magic builds.
