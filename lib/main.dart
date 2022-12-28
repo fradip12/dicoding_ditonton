@@ -1,5 +1,6 @@
 import 'package:about/about_page.dart';
 import 'package:common/common.dart';
+import 'package:ditonton/ssl/ssl_pinning.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // await SSLPinning.init();
+  await SSLPinning.init();
   runApp(MyApp());
 }
 

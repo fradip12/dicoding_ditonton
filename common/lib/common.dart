@@ -12,4 +12,3 @@ export 'package:common/utils/network_info.dart';
 export 'package:common/utils/routes.dart';
 export 'package:common/utils/state_enum.dart';
 export 'package:common/utils/utils.dart';
-export 'package:common/utils/client.dart';
