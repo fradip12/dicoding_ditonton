@@ -1,10 +1,13 @@
-import 'package:core/export.dart';
-import 'package:core/presentation/bloc/movie/movie_list_bloc/movie_list_bloc.dart';
+import 'package:common/common.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
+import 'package:movies/movies.dart';
+import 'package:search/domain/usecase/search_tv.dart';
 import 'package:search/presentation/bloc/search_bloc.dart';
 import 'package:search/search.dart';
+import 'package:series/series.dart';
+import 'package:watchlist/watchlist.dart';
 
 final locator = GetIt.instance;
 
@@ -36,16 +39,14 @@ void init() {
   //provider tv series
   locator.registerFactory(() => TvListBloc(locator(), locator(), locator()));
   locator.registerFactory(
-    () => TvDetailNotifier(
+    () => TvDetailBloc(
       getTvDetail: locator(),
       getTvRecommendations: locator(),
       removeTvWatchlist: locator(),
       saveTvWatchlist: locator(),
-      getTvWatchListStatus: locator(),
+      getTvWatchListStatus: locator(), 
     ),
   );
-  
- 
 
   // use case
   locator.registerLazySingleton(() => GetNowPlayingMovies(locator()));
@@ -97,7 +98,10 @@ void init() {
       ));
 
   // helper
-  locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
+  locator.registerLazySingleton<DatabaseSeriesHelper>(
+      () => DatabaseSeriesHelper());
+  locator.registerLazySingleton<DatabaseMoviesHelper>(
+      () => DatabaseMoviesHelper());
 
   // network info
   locator.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(locator()));

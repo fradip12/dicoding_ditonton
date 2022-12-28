@@ -1,12 +1,15 @@
 import 'package:about/about_page.dart';
-import 'package:core/export.dart';
+import 'package:common/common.dart';
 import 'package:ditonton/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/movies.dart';
 import 'package:provider/provider.dart';
 import 'package:search/presentation/bloc/search_bloc.dart';
+import 'package:series/series.dart';
+import 'package:watchlist/watchlist.dart';
 import 'injection.dart' as di;
 import 'package:search/search.dart';
 
@@ -22,14 +25,12 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
+    return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => di.locator<MovieListBloc>()),
         BlocProvider(create: (_) => di.locator<WatchlistBloc>()),
         BlocProvider(create: (_) => di.locator<TvListBloc>()),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvDetailNotifier>(),
-        ),
+        BlocProvider(create: (_) => di.locator<TvDetailBloc>()),
         BlocProvider(create: (_) => di.locator<SearchBloc>()),
         BlocProvider(create: (_) => di.locator<MovieDetailBloc>()),
       ],

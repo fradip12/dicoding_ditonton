@@ -21,10 +21,7 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  about:
-    path: about
-  core:
-    path: core
+  
   cupertino_icons: ^1.0.2
   data_connection_checker:
     git:
@@ -43,6 +40,16 @@ dependencies:
   provider: ^6.0.3
   search:
     path: search
+  about:
+    path: about
+  common: 
+    path: common
+  movies:
+    path: movies
+  series:
+    path: series
+  watchlist:
+    path: watchlist
 
 dev_dependencies:
   auto_exporter: ^1.4.0

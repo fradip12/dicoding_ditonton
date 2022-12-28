@@ -1,12 +1,11 @@
 import 'dart:developer';
 
+import 'package:common/common.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/movies.dart';
 import 'package:search/presentation/bloc/search_bloc.dart';
-
-import '../movie_search_notifier.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:core/core.dart';
+import 'package:series/series.dart';
 
 class SearchPage extends StatelessWidget {
   final SearchType type;

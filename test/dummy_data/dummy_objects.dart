@@ -1,11 +1,13 @@
 
-import 'package:core/core.dart';
+
+import 'package:movies/movies.dart';
+import 'package:series/series.dart';
 
 final testMovie = Movie(
   adult: false,
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
   genreIds: [14, 28],
-  id: 557,
+  id: 1,
   originalTitle: 'Spider-Man',
   overview:
       'After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers to become the Amazing superhero known as Spider-Man.',
@@ -166,3 +168,37 @@ final testTvMap = {
   'posterPath': 'posterPath',
   'name': 'name',
 };
+
+  final tMovieModel = Movie(
+    adult: false,
+    backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
+    genreIds: [14, 28],
+    id: 557,
+    originalTitle: 'Spider-Man',
+    overview:
+        'After being bitten by a genetically altered spider, nerdy high school student Peter Parker is endowed with amazing powers to become the Amazing superhero known as Spider-Man.',
+    popularity: 60.441,
+    posterPath: '/rweIrveL43TaxUN0akQEaAXL6x0.jpg',
+    releaseDate: '2002-05-01',
+    title: 'Spider-Man',
+    video: false,
+    voteAverage: 7.2,
+    voteCount: 13507,
+  );
+  final tMovieList = <Movie>[tMovieModel];
+  final tSeriesModel = TV(
+    backdropPath: 'backdropPath',
+    id: 1,
+    originalLanguage: 'en',
+    overview: 'overview',
+    popularity: 1,
+    posterPath: 'posterPath',
+    voteAverage: '1',
+    voteCount: 1,
+    name: 'name',
+    originCountry: ['id'],
+    originalName: 'name',
+    genreIds: [1],
+    firstAirDate: '01-01-22',
+  );
+  final tSeriesList = <TV>[tSeriesModel];

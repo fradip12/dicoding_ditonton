@@ -1,12 +1,12 @@
-import 'dart:developer';
 
-import 'package:core/core.dart';
-import 'package:core/domain/entities/movie.dart';
-import 'package:dartz/dartz.dart';
+import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/movies.dart';
 import 'package:rxdart/transformers.dart';
+import 'package:series/series.dart';
 
+import '../../domain/usecase/search_tv.dart';
 import '../../search.dart';
 
 part 'search_event.dart';

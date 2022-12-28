@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:core/core.dart';
    
+import 'package:common/common.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
+import 'package:series/series.dart';
 import '../../helpers/test_helper.mocks.dart';
 import '../../json_reader.dart';
 

@@ -1,6 +1,7 @@
 
-import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:movies/movies.dart';
+import 'package:series/series.dart';
 
 import '../../dummy_data/dummy_objects.dart';
 

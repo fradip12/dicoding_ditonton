@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:series/series.dart';
 
-import 'package:core/core.dart';
 import '../../json_reader.dart';
 
 void main() {

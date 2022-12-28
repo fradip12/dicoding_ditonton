@@ -1,16 +1,17 @@
    
+import 'package:common/common.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:core/core.dart';
+import 'package:series/series.dart';
 import '../../dummy_data/dummy_objects.dart';
 import '../../helpers/test_helper.mocks.dart';
 
 void main() {
   late TvLocalDataSourceImpl dataSource;
-  late MockDatabaseHelper mockDatabaseHelper;
+  late MockDatabaseSeriesHelper mockDatabaseHelper;
 
   setUp(() {
-    mockDatabaseHelper = MockDatabaseHelper();
+    mockDatabaseHelper = MockDatabaseSeriesHelper();
     dataSource = TvLocalDataSourceImpl(databaseHelper: mockDatabaseHelper);
   });
 
