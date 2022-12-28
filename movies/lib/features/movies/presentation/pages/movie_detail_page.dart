@@ -77,9 +77,9 @@ class DetailContent extends StatelessWidget {
     var snackBar = SnackBar(
       content: Text(
         message,
-        style: kBodyText.copyWith(color: kMikadoYellow),
+        style: kBodyText.copyWith(color: kPrussianBlue),
       ),
-      backgroundColor: kOxfordBlue,
+      backgroundColor: Colors.white,
     );
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);

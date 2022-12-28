@@ -4,3 +4,5 @@ const API_KEY = 'api_key=2174d146bb9c0eab47529b2e77d6b526';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const watchlistAddSuccessMessage = 'Added to Watchlist';
 const watchlistRemoveSuccessMessage = 'Removed from Watchlist';
+const imgProfile =
+    "https://avatars.githubusercontent.com/u/65805640?s=400&u=a602c423dbf7b65dae6862c64fff4101aeec49dd&v=4";

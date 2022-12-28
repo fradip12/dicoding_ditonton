@@ -71,6 +71,17 @@ class DetailTvContent extends StatelessWidget {
     this.isAddedWatchlist,
     this.recommendations,
   );
+  _showSnack(BuildContext context, String message) {
+    var snackBar = SnackBar(
+      content: Text(
+        message,
+        style: kBodyText.copyWith(color: kPrussianBlue),
+      ),
+      backgroundColor: Colors.white,
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,38 +125,19 @@ class DetailTvContent extends StatelessWidget {
                             ),
                             ElevatedButton(
                               onPressed: () async {
-                                // if (!isAddedWatchlist) {
-                                //   await Provider.of<TvDetailNotifier>(context,
-                                //           listen: false)
-                                //       .addWatchlist(movie);
-                                // } else {
-                                //   await Provider.of<TvDetailNotifier>(context,
-                                //           listen: false)
-                                //       .removeFromWatchlist(movie);
-                                // }
-
-                                // final message = Provider.of<TvDetailNotifier>(
-                                //         context,
-                                //         listen: false)
-                                //     .watchlistMessage;
-
-                                // if (message ==
-                                //         TvDetailNotifier
-                                //             .watchlistAddSuccessMessage ||
-                                //     message ==
-                                //         TvDetailNotifier
-                                //             .watchlistRemoveSuccessMessage) {
-                                //   ScaffoldMessenger.of(context).showSnackBar(
-                                //       SnackBar(content: Text(message)));
-                                // } else {
-                                //   showDialog(
-                                //       context: context,
-                                //       builder: (context) {
-                                //         return AlertDialog(
-                                //           content: Text(message),
-                                //         );
-                                //       });
-                                // }
+                                if (!isAddedWatchlist) {
+                                  context
+                                      .read<TvDetailBloc>()
+                                      .add(OnAddTvtoWatchlist(movie));
+                                  _showSnack(
+                                      context, watchlistAddSuccessMessage);
+                                } else {
+                                  context
+                                      .read<TvDetailBloc>()
+                                      .add(OnTvRemoveWatchlist(movie));
+                                  _showSnack(
+                                      context, watchlistRemoveSuccessMessage);
+                                }
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,

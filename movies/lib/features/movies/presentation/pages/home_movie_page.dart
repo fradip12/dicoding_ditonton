@@ -16,9 +16,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-        return  HomeMovie();
+        return HomeMovie();
       case 1:
-        return  HomeTv();
+        return HomeTv();
 
       default:
         return const Text("Error");
@@ -49,7 +49,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/circle-g.png'),
+                backgroundImage: NetworkImage(
+                  imgProfile,
+                ),
               ),
               accountName: Text('Ditonton'),
               accountEmail: Text('ditonton@dicoding.com'),
