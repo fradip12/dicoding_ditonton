@@ -25,5 +25,4 @@ export 'package:series/presentation/pages/tv/tv_detail_page.dart';
 export 'package:series/presentation/pages/tv/tv_nowplaying_page.dart';
 export 'package:series/presentation/pages/tv/tv_popular_page.dart';
 export 'package:series/presentation/pages/tv/tv_toprated_page.dart';
-export 'package:series/presentation/provider/tv/tv_detail_notifider.dart';
 export 'package:series/presentation/widgets/tv_card_list.dart';

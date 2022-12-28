@@ -1,0 +1,26 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "backdrop_path": "/AvYjbjY63kh8FgYlpgLJRGHc6H4.jpg",
+            "first_air_date": "2021-08-03",
+            "genre_ids": [
+              10766
+            ],
+            "id": 130542,
+            "name": "Bhagya Lakshmi",
+            "origin_country": [
+              "IN"
+            ],
+            "original_language": "en",
+            "original_name": "Bhagya Lakshmi",
+            "overview": "Hailing from a middle-class family, Lakshmis life is upended when she realises that her marriage to Rishi Oberoi, an industrialists son, is a sham to keep his death at bay.",
+            "popularity": 1543.381,
+            "poster_path": "/7XEE8LyVxEJl5l4IK9r1wytDBPm.jpg",
+            "vote_average": 1,
+            "vote_count": 1
+          }
+    ],
+    "total_pages": 4,
+    "total_results": 62
+  }

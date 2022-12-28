@@ -1,17 +1,17 @@
 import 'package:about/about_page.dart';
 import 'package:common/common.dart';
-import 'package:ditonton/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/movies.dart';
-import 'package:provider/provider.dart';
 import 'package:search/presentation/bloc/search_bloc.dart';
+import 'package:search/search.dart';
 import 'package:series/series.dart';
 import 'package:watchlist/watchlist.dart';
+
+import 'firebase_options.dart';
 import 'injection.dart' as di;
-import 'package:search/search.dart';
 
 void main() async {
   di.init();
