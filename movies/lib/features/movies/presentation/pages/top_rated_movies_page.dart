@@ -37,8 +37,8 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
                 child: CircularProgressIndicator(),
               );
             } else if (state is MovieListLoaded) {
-              final data = state.popular;
-              final _state = state.popularState;
+              final data = state.topRated;
+              final _state = state.topRatedState;
               if (_state == RequestState.Error) {
                 return const Text('Failed');
               }
@@ -49,10 +49,8 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
                 },
                 itemCount: data.length,
               );
-            } else if (state is WatchlistDialog) {
-              return const CircularProgressIndicator();
             } else {
-              return Text((state as MovieDetailError).message);
+              return Text((state as MovieListError).message);
             }
           },
         ),

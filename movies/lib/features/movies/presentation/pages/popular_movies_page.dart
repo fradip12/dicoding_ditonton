@@ -2,7 +2,6 @@ import 'package:common/common.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
-import '../bloc/movie/movie_detail_bloc/movie_detail_bloc.dart';
 import '../bloc/movie/movie_list_bloc/movie_list_bloc.dart';
 import '../widgets/movie_card_list.dart';
 
@@ -49,10 +48,8 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                 },
                 itemCount: data.length,
               );
-            } else if (state is WatchlistDialog) {
-              return const CircularProgressIndicator();
             } else {
-              return Text((state as MovieDetailError).message);
+              return Text((state as MovieListError).message);
             }
           },
         ),

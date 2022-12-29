@@ -1,4 +1,3 @@
-
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,10 +29,6 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
     routeObserver.subscribe(this, ModalRoute.of(context)!);
   }
 
-  @override
-  void didPopNext() {
-    context.read<WatchlistBloc>().add(OnLoadWatchlist());
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +76,8 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
                             },
                             itemCount: data.length,
                           );
-                        } else if (state is WatchlistDialog) {
-                          return const CircularProgressIndicator();
                         } else {
-                          return Text((state as MovieDetailError).message);
+                          return Text((state as WatchlistError).message);
                         }
                       },
                     ),

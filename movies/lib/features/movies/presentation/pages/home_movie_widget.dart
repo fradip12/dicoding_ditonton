@@ -1,4 +1,3 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
@@ -46,80 +45,76 @@ class _HomeMovieState extends State<HomeMovie> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Now Playing',
-              style: kHeading6,
-            ),
-            BlocBuilder<MovieListBloc, MovieListState>(
-              builder: (_, state) {
-                if (state is MovieListEmpty) {
-                  return Container();
-                } else if (state is MovieListLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is MovieListLoaded) {
-                  return MovieList(state.nowplaying, state.nowPlayingState);
-                } else if (state is WatchlistDialog) {
-                  return const CircularProgressIndicator();
-                } else {
-                  return Text((state as MovieDetailError).message);
-                }
-              },
-            ),
-            _buildSubHeading(
-              title: 'Popular',
-              onTap: () =>
-                  Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
-            ),
-            BlocBuilder<MovieListBloc, MovieListState>(
-              builder: (_, state) {
-                if (state is MovieListEmpty) {
-                  return Container();
-                } else if (state is MovieListLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is MovieListLoaded) {
-                  return MovieList(state.popular, state.popularState);
-                } else if (state is WatchlistDialog) {
-                  return const CircularProgressIndicator();
-                } else {
-                  return Text((state as MovieDetailError).message);
-                }
-              },
-            ),
-         
-            _buildSubHeading(
-              title: 'Top Rated',
-              onTap: () =>
-                  Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
-            ),
-             BlocBuilder<MovieListBloc, MovieListState>(
-              builder: (_, state) {
-                if (state is MovieListEmpty) {
-                  return Container();
-                } else if (state is MovieListLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                } else if (state is MovieListLoaded) {
-                  return MovieList(state.topRated, state.topRatedState);
-                } else if (state is WatchlistDialog) {
-                  return const CircularProgressIndicator();
-                } else {
-                  return Text((state as MovieDetailError).message);
-                }
-              },
-            ),
-          ],
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Now Playing',
+            style: kHeading6,
+          ),
+          BlocBuilder<MovieListBloc, MovieListState>(
+            builder: (_, state) {
+              if (state is MovieListEmpty) {
+                return Container();
+              } else if (state is MovieListLoading) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state is MovieListLoaded) {
+                return MovieList(state.nowplaying, state.nowPlayingState);
+              } else if (state is WatchlistDialog) {
+                return CircularProgressIndicator();
+              } else {
+                return Text((state as MovieDetailError).message);
+              }
+            },
+          ),
+          _buildSubHeading(
+            title: 'Popular',
+            onTap: () =>
+                Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
+          ),
+          BlocBuilder<MovieListBloc, MovieListState>(
+            builder: (_, state) {
+              if (state is MovieListEmpty) {
+                return Container();
+              } else if (state is MovieListLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state is MovieListLoaded) {
+                return MovieList(state.popular, state.popularState);
+              } else if (state is WatchlistDialog) {
+                return const CircularProgressIndicator();
+              } else {
+                return Text((state as MovieDetailError).message);
+              }
+            },
+          ),
+          _buildSubHeading(
+            title: 'Top Rated',
+            onTap: () =>
+                Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
+          ),
+          BlocBuilder<MovieListBloc, MovieListState>(
+            builder: (_, state) {
+              if (state is MovieListEmpty) {
+                return Container();
+              } else if (state is MovieListLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state is MovieListLoaded) {
+                return MovieList(state.topRated, state.topRatedState);
+              } else if (state is WatchlistDialog) {
+                return const CircularProgressIndicator();
+              } else {
+                return Text((state as MovieDetailError).message);
+              }
+            },
+          ),
+        ],
       ),
     );
   }

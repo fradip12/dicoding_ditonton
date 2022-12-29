@@ -13,7 +13,7 @@ class HomeMoviePage extends StatefulWidget {
 class _HomeMoviePageState extends State<HomeMoviePage> {
   int _selectedIndex = 0;
 
-  _getDrawerItemWidget(int pos) {
+  getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
         return HomeMovie();
@@ -49,8 +49,8 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  imgProfile,
+                backgroundImage: AssetImage(
+                  'assets/circle-g.png',
                 ),
               ),
               accountName: Text('Ditonton'),
@@ -65,7 +65,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ),
             ListTile(
               leading: Icon(Icons.movie),
-              title: Text('TV Series'),
+              title: Text('Series'),
               onTap: () {
                 _onSelectItem(1);
               },
@@ -102,7 +102,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           )
         ],
       ),
-      body: _getDrawerItemWidget(_selectedIndex),
+      body: getDrawerItemWidget(_selectedIndex),
     );
   }
 }

@@ -51,10 +51,10 @@ class _TvDetailPageState extends State<TvDetailPage> {
                 recommend,
               ),
             );
-          } else if (state is WatchlistDialog) {
+          } else if (state is WatchlistTvDialog) {
             return const CircularProgressIndicator();
           } else {
-            return Text((state as MovieDetailError).message);
+            return Text((state as TvDetailError).message);
           }
         },
       ),

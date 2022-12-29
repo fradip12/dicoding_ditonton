@@ -6,3 +6,5 @@ const watchlistAddSuccessMessage = 'Added to Watchlist';
 const watchlistRemoveSuccessMessage = 'Removed from Watchlist';
 const imgProfile =
     "https://avatars.githubusercontent.com/u/65805640?s=400&u=a602c423dbf7b65dae6862c64fff4101aeec49dd&v=4";
+const aboutDesc =
+    "Ditonton merupakan sebuah aplikasi katalog film yang dikembangkan oleh Dicoding Indonesia sebagai contoh proyek aplikasi untuk kelas Menjadi Flutter Developer Expert.";

@@ -83,10 +83,11 @@ class MyApp extends StatelessWidget {
               );
             case SEARCH_ROUTE:
               final type = settings.arguments as SearchType;
-              return CupertinoPageRoute(
-                  builder: (_) => SearchPage(
-                        type: type,
-                      ));
+              return MaterialPageRoute(
+                builder: (_) => SearchPage(
+                  type: type,
+                ),
+              );
             case WatchlistMoviesPage.ROUTE_NAME:
               return MaterialPageRoute(builder: (_) => WatchlistMoviesPage());
             case AboutPage.ROUTE_NAME:
