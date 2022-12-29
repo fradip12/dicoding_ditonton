@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:ditonton/ssl/ssl_pinning.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:movies/movies.dart';
@@ -106,6 +107,6 @@ void init() {
   locator.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(locator()));
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => SSLPinning.client);
   locator.registerLazySingleton(() => DataConnectionChecker());
 }
