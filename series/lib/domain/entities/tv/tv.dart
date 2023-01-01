@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class TV extends Equatable {
   TV({
     required this.backdropPath,

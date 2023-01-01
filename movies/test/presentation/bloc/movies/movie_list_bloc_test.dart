@@ -44,13 +44,13 @@ void main() {
   group("On Load All", () {
     test('initialState should be Empty', () {
       expect(movieListBloc.state, MovieListEmpty());
-      expect(movieListBloc.nowPlayingState, equals(RequestState.Empty));
+      expect(movieListBloc.nowPlayingState, equals(RequestState.empty));
       expect(movieListBloc.nowPlayingMovies, equals(<Movie>[]));
 
-      expect(movieListBloc.popularState, equals(RequestState.Empty));
+      expect(movieListBloc.popularState, equals(RequestState.empty));
       expect(movieListBloc.popularMovies, equals(<Movie>[]));
 
-      expect(movieListBloc.topRatedState, equals(RequestState.Empty));
+      expect(movieListBloc.topRatedState, equals(RequestState.empty));
       expect(movieListBloc.topRatedMovies, equals(<Movie>[]));
     });
 
@@ -72,9 +72,9 @@ void main() {
           tMovieList,
           tMovieList,
           tMovieList,
-          RequestState.Loaded,
-          RequestState.Loaded,
-          RequestState.Loaded,
+          RequestState.loaded,
+          RequestState.loaded,
+          RequestState.loaded,
         ),
       ],
       verify: (bloc) {

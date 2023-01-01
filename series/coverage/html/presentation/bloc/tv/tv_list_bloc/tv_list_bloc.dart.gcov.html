@@ -76,11 +76,11 @@
 <a name="14"><span class="lineNum">      14 </span>            :   final GetTvNowPlayingMovies getNowPlayingTv;</a>
 <a name="15"><span class="lineNum">      15 </span>            :   final GetTvPopular getTvPopular;</a>
 <a name="16"><span class="lineNum">      16 </span>            :   final GetTvTopRated getTvToprated;</a>
-<a name="17"><span class="lineNum">      17 </span>            :   var nowPlayingState = RequestState.Empty;</a>
+<a name="17"><span class="lineNum">      17 </span>            :   var nowPlayingState = RequestState.empty;</a>
 <a name="18"><span class="lineNum">      18 </span>            :   var nowPlayingMovies = &lt;TV&gt;[];</a>
-<a name="19"><span class="lineNum">      19 </span>            :   var popularState = RequestState.Empty;</a>
+<a name="19"><span class="lineNum">      19 </span>            :   var popularState = RequestState.empty;</a>
 <a name="20"><span class="lineNum">      20 </span>            :   var popularMovies = &lt;TV&gt;[];</a>
-<a name="21"><span class="lineNum">      21 </span>            :   var topRatedState = RequestState.Empty;</a>
+<a name="21"><span class="lineNum">      21 </span>            :   var topRatedState = RequestState.empty;</a>
 <a name="22"><span class="lineNum">      22 </span>            :   var topRatedMovies = &lt;TV&gt;[];</a>
 <a name="23"><span class="lineNum">      23 </span>            : </a>
 <a name="24"><span class="lineNum">      24 </span><span class="lineCov">          1 :   TvListBloc(</span></a>
@@ -100,23 +100,23 @@
 <a name="38"><span class="lineNum">      38 </span><span class="lineCov">          3 :     final popular = await getTvPopular.execute();</span></a>
 <a name="39"><span class="lineNum">      39 </span><span class="lineCov">          3 :     final topRated = await getTvToprated.execute();</span></a>
 <a name="40"><span class="lineNum">      40 </span><span class="lineCov">          2 :     nowPlaying.fold((l) {</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">          1 :       nowPlayingState = RequestState.Error;</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">          1 :       nowPlayingState = RequestState.error;</span></a>
 <a name="42"><span class="lineNum">      42 </span><span class="lineCov">          3 :       return emit(TvListError(l.message));</span></a>
 <a name="43"><span class="lineNum">      43 </span><span class="lineCov">          1 :     }, (r) {</span></a>
 <a name="44"><span class="lineNum">      44 </span><span class="lineCov">          1 :       nowPlayingMovies = r;</span></a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">          1 :       nowPlayingState = RequestState.Loaded;</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">          1 :       nowPlayingState = RequestState.loaded;</span></a>
 <a name="46"><span class="lineNum">      46 </span><span class="lineCov">          1 :       popular.fold((l) {</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineNoCov">          0 :         popularState = RequestState.Error;</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineNoCov">          0 :         popularState = RequestState.error;</span></a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineNoCov">          0 :         return emit(TvListError(l.message));</span></a>
 <a name="49"><span class="lineNum">      49 </span><span class="lineCov">          1 :       }, (r) {</span></a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">          1 :         popularMovies = r;</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          1 :         popularState = RequestState.Loaded;</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          1 :         popularState = RequestState.loaded;</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 :         topRated.fold((l) {</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineNoCov">          0 :           topRatedState = RequestState.Error;</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineNoCov">          0 :           topRatedState = RequestState.error;</span></a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineNoCov">          0 :           return emit(TvListError(l.message));</span></a>
 <a name="55"><span class="lineNum">      55 </span><span class="lineCov">          1 :         }, (r) {</span></a>
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">          1 :           topRatedMovies = r;</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          1 :           topRatedState = RequestState.Loaded;</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          1 :           topRatedState = RequestState.loaded;</span></a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">          1 :           return emit(</span></a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">          1 :             TvListLoaded(</span></a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">          1 :               nowPlayingMovies,</span></a>

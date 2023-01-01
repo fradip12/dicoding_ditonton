@@ -68,7 +68,7 @@ class _HomeMovieState extends State<HomeMovie> {
                 } else if (state is WatchlistDialog) {
                   return CircularProgressIndicator();
                 } else {
-                  return Text((state as MovieDetailError).message);
+                  return Text((state as MovieListError).message);
                 }
               },
             ),
@@ -90,7 +90,7 @@ class _HomeMovieState extends State<HomeMovie> {
                 } else if (state is WatchlistDialog) {
                   return const CircularProgressIndicator();
                 } else {
-                  return Text((state as MovieDetailError).message);
+                  return Text((state as MovieListError).message);
                 }
               },
             ),
@@ -112,7 +112,7 @@ class _HomeMovieState extends State<HomeMovie> {
                 } else if (state is WatchlistDialog) {
                   return const CircularProgressIndicator();
                 } else {
-                  return Text((state as MovieDetailError).message);
+                  return Text((state as MovieListError).message);
                 }
               },
             ),
@@ -130,7 +130,7 @@ class MovieList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (state == RequestState.Error) {
+    if (state == RequestState.error) {
       return const Text('Failed');
     }
     return SizedBox(
@@ -152,7 +152,7 @@ class MovieList extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
                 child: CachedNetworkImage(
-                  imageUrl: '$BASE_IMAGE_URL${movie.posterPath}',
+                  imageUrl: '$baseImageUrl${movie.posterPath}',
                   placeholder: (context, url) => Center(
                     child: CircularProgressIndicator(),
                   ),

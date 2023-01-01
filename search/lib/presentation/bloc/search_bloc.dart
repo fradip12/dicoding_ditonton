@@ -6,7 +6,6 @@ import 'package:movies/movies.dart';
 import 'package:rxdart/transformers.dart';
 import 'package:series/series.dart';
 
-import '../../domain/usecase/search_tv.dart';
 import '../../search.dart';
 
 part 'search_event.dart';
@@ -20,7 +19,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     on<OnQueryChanged>((event, emit) async {
       final query = event.query;
       emit(SearchLoading());
-      if (event.type == SearchType.MOVIES) {
+      if (event.type == SearchType.movies) {
         final result = await _searchMovies.execute(query);
         result.fold(
           (err) {

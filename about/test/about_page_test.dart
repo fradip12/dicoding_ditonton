@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:about/about.dart';
 import 'package:common/common.dart';
@@ -7,9 +6,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   Widget createWidgetUnderTest() {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Tests',
-      home: Scaffold(body: AboutPage()),
+      home: Scaffold(body:  AboutPage()),
     );
   }
 

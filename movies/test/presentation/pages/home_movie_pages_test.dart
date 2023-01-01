@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movies/movies.dart';
-import 'package:series/presentation/pages/home_tv_widget.dart';
 
 import '../../dummy_data/dummy_objects.dart';
 import 'home_movie_widget_test.mocks.dart';
@@ -30,9 +29,9 @@ void main() {
         testMovieList,
         testMovieList,
         testMovieList,
-        RequestState.Loaded,
-        RequestState.Loaded,
-        RequestState.Loaded,
+        RequestState.loaded,
+        RequestState.loaded,
+        RequestState.loaded,
       );
       when(mockMovieListBloc.state).thenReturn(expected);
       when(mockMovieListBloc.stream).thenAnswer((_) => Stream.value(expected));

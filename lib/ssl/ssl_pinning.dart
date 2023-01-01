@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
@@ -31,7 +30,7 @@ class SSLPinning {
       if (isTestMode) {
         bytes = utf8.encode(_certificate);
       } else {
-        bytes = (await rootBundle.load('assets/certificates.pem'))
+        bytes = (await rootBundle.load('assets/test.pem'))
             .buffer
             .asUint8List();
       }

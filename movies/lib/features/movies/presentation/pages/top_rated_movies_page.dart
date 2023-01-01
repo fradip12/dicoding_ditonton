@@ -2,7 +2,6 @@ import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/movie/movie_detail_bloc/movie_detail_bloc.dart';
 import '../bloc/movie/movie_list_bloc/movie_list_bloc.dart';
 import '../widgets/movie_card_list.dart';
 
@@ -39,7 +38,7 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
             } else if (state is MovieListLoaded) {
               final data = state.topRated;
               final _state = state.topRatedState;
-              if (_state == RequestState.Error) {
+              if (_state == RequestState.error) {
                 return const Text('Failed');
               }
               return ListView.builder(

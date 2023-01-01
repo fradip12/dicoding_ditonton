@@ -38,7 +38,7 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
             } else if (state is MovieListLoaded) {
               final data = state.popular;
               final _state = state.popularState;
-              if (_state == RequestState.Error) {
+              if (_state == RequestState.error) {
                 return const Text('Failed');
               }
               return ListView.builder(

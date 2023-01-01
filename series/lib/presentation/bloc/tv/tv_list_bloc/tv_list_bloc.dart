@@ -14,11 +14,11 @@ class TvListBloc extends Bloc<TvListEvent, TvListState> {
   final GetTvNowPlayingMovies getNowPlayingTv;
   final GetTvPopular getTvPopular;
   final GetTvTopRated getTvToprated;
-  var nowPlayingState = RequestState.Empty;
+  var nowPlayingState = RequestState.empty;
   var nowPlayingMovies = <TV>[];
-  var popularState = RequestState.Empty;
+  var popularState = RequestState.empty;
   var popularMovies = <TV>[];
-  var topRatedState = RequestState.Empty;
+  var topRatedState = RequestState.empty;
   var topRatedMovies = <TV>[];
 
   TvListBloc(
@@ -38,23 +38,23 @@ class TvListBloc extends Bloc<TvListEvent, TvListState> {
     final popular = await getTvPopular.execute();
     final topRated = await getTvToprated.execute();
     nowPlaying.fold((l) {
-      nowPlayingState = RequestState.Error;
+      nowPlayingState = RequestState.error;
       return emit(TvListError(l.message));
     }, (r) {
       nowPlayingMovies = r;
-      nowPlayingState = RequestState.Loaded;
+      nowPlayingState = RequestState.loaded;
       popular.fold((l) {
-        popularState = RequestState.Error;
+        popularState = RequestState.error;
         return emit(TvListError(l.message));
       }, (r) {
         popularMovies = r;
-        popularState = RequestState.Loaded;
+        popularState = RequestState.loaded;
         topRated.fold((l) {
-          topRatedState = RequestState.Error;
+          topRatedState = RequestState.error;
           return emit(TvListError(l.message));
         }, (r) {
           topRatedMovies = r;
-          topRatedState = RequestState.Loaded;
+          topRatedState = RequestState.loaded;
           return emit(
             TvListLoaded(
               nowPlayingMovies,

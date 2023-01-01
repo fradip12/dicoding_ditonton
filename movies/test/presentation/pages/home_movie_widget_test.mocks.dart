@@ -61,7 +61,7 @@ class MockMovieListBloc extends _i1.Mock implements _i5.MovieListBloc {
   @override
   _i6.RequestState get nowPlayingState =>
       (super.noSuchMethod(Invocation.getter(#nowPlayingState),
-          returnValue: _i6.RequestState.Empty) as _i6.RequestState);
+          returnValue: _i6.RequestState.empty) as _i6.RequestState);
   @override
   set nowPlayingState(_i6.RequestState? _nowPlayingState) =>
       super.noSuchMethod(Invocation.setter(#nowPlayingState, _nowPlayingState),
@@ -77,7 +77,7 @@ class MockMovieListBloc extends _i1.Mock implements _i5.MovieListBloc {
   @override
   _i6.RequestState get popularState =>
       (super.noSuchMethod(Invocation.getter(#popularState),
-          returnValue: _i6.RequestState.Empty) as _i6.RequestState);
+          returnValue: _i6.RequestState.empty) as _i6.RequestState);
   @override
   set popularState(_i6.RequestState? _popularState) =>
       super.noSuchMethod(Invocation.setter(#popularState, _popularState),
@@ -93,7 +93,7 @@ class MockMovieListBloc extends _i1.Mock implements _i5.MovieListBloc {
   @override
   _i6.RequestState get topRatedState =>
       (super.noSuchMethod(Invocation.getter(#topRatedState),
-          returnValue: _i6.RequestState.Empty) as _i6.RequestState);
+          returnValue: _i6.RequestState.empty) as _i6.RequestState);
   @override
   set topRatedState(_i6.RequestState? _topRatedState) =>
       super.noSuchMethod(Invocation.setter(#topRatedState, _topRatedState),

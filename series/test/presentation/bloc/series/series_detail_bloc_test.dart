@@ -40,8 +40,6 @@ void main() {
     );
   });
 
-  final tId = 1;
-  final tMovies = <TV>[testTv];
 
   group("bloc", () {
     test('initial state should be empty', () {

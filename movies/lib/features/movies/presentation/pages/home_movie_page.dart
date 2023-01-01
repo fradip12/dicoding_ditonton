@@ -33,11 +33,11 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   _onNavigateSearch(int index) {
     switch (index) {
       case 0:
-        return SearchType.MOVIES;
+        return SearchType.movies;
       case 1:
-        return SearchType.TVSERIES;
+        return SearchType.tvSeries;
       default:
-        return SearchType.MOVIES;
+        return SearchType.movies;
     }
   }
 
@@ -79,7 +79,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, ABOUT_ROUTE);
+                Navigator.pushNamed(context, aboutRoute);
               },
               leading: Icon(Icons.info_outline),
               title: Text('About'),
@@ -94,7 +94,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                SEARCH_ROUTE,
+                searchRoute,
                 arguments: _onNavigateSearch(_selectedIndex),
               );
             },

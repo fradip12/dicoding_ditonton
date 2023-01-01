@@ -112,9 +112,9 @@ void main() {
       setUp(() {
         final expected = WatchlistLoaded(
           watchlistMovies: testMovieList,
-          watchlistMoviesState: RequestState.Loaded,
+          watchlistMoviesState: RequestState.loaded,
           watchlistSeries: testTvList,
-          watchlistSeriesState: RequestState.Loaded,
+          watchlistSeriesState: RequestState.loaded,
         );
         when(bloc.state).thenReturn(expected);
         when(bloc.stream).thenAnswer((_) => Stream.value(expected));
@@ -226,9 +226,9 @@ void main() {
       setUp(() {
         final expected = WatchlistLoaded(
           watchlistMovies: testMovieList,
-          watchlistMoviesState: RequestState.Loaded,
+          watchlistMoviesState: RequestState.loaded,
           watchlistSeries: testTvList,
-          watchlistSeriesState: RequestState.Loaded,
+          watchlistSeriesState: RequestState.loaded,
         );
         when(bloc.state).thenReturn(expected);
         when(bloc.stream).thenAnswer((_) => Stream.value(expected));

@@ -10,7 +10,7 @@
 //     required this.searchSeries,
 //   });
 
-//   RequestState _state = RequestState.Empty;
+//   RequestState _state = RequestState.empty;
 //   RequestState get state => _state;
 
 //   List<Movie> _searchResult = [];
@@ -30,12 +30,12 @@
 //     result.fold(
 //       (failure) {
 //         _message = failure.message;
-//         _state = RequestState.Error;
+//         _state = RequestState.error;
 //         notifyListeners();
 //       },
 //       (data) {
 //         _searchResult = data;
-//         _state = RequestState.Loaded;
+//         _state = RequestState.loaded;
 //         notifyListeners();
 //       },
 //     );
@@ -50,13 +50,13 @@
 //     result.fold(
 //       (failure) {
 //         _message = failure.message;
-//         _state = RequestState.Error;
+//         _state = RequestState.error;
 //         notifyListeners();
 //       },
 //       (data) {
 //         print(data);
 //         _searchTVResult = data;
-//         _state = RequestState.Loaded;
+//         _state = RequestState.loaded;
 //         notifyListeners();
 //       },
 //     );

@@ -23,7 +23,7 @@ void main() {
       child: MaterialApp(
         home: Scaffold(
           body: SearchPage(
-            type: SearchType.MOVIES,
+            type: SearchType.movies,
           ),
         ),
       ),
@@ -36,7 +36,7 @@ void main() {
       child: MaterialApp(
         home: Scaffold(
           body: SearchPage(
-            type: SearchType.TVSERIES,
+            type: SearchType.tvSeries,
           ),
         ),
       ),

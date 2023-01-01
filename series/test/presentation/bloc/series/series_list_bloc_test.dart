@@ -34,13 +34,13 @@ void main() {
   group("On Load All", () {
     test('initialState should be Empty', () {
       expect(bloc.state, TvListInitial());
-      expect(bloc.nowPlayingState, equals(RequestState.Empty));
+      expect(bloc.nowPlayingState, equals(RequestState.empty));
       expect(bloc.nowPlayingMovies, equals(<TV>[]));
 
-      expect(bloc.popularState, equals(RequestState.Empty));
+      expect(bloc.popularState, equals(RequestState.empty));
       expect(bloc.popularMovies, equals(<TV>[]));
 
-      expect(bloc.topRatedState, equals(RequestState.Empty));
+      expect(bloc.topRatedState, equals(RequestState.empty));
       expect(bloc.topRatedMovies, equals(<TV>[]));
     });
 
@@ -62,9 +62,9 @@ void main() {
           tTvList,
           tTvList,
           tTvList,
-          RequestState.Loaded,
-          RequestState.Loaded,
-          RequestState.Loaded,
+          RequestState.loaded,
+          RequestState.loaded,
+          RequestState.loaded,
         ),
       ],
       verify: (bloc) {

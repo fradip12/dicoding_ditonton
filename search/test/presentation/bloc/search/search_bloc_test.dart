@@ -61,7 +61,7 @@ void main() {
   late SearchType type;
   group("search movies", () {
     setUp(() {
-      type = SearchType.MOVIES;
+      type = SearchType.movies;
     });
     test('initial state should be empty', () {
       expect(searchBloc.state, SearchEmpty());
@@ -106,7 +106,7 @@ void main() {
 
   group("search series", () {
     setUp(() {
-      type = SearchType.TVSERIES;
+      type = SearchType.tvSeries;
     });
     test('initial state should be empty', () {
       expect(searchBloc.state, SearchEmpty());

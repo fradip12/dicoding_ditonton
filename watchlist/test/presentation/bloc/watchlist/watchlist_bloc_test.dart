@@ -3,8 +3,6 @@ import 'package:common/common.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:movies/movies.dart';
-import 'package:series/series.dart';
 import 'package:watchlist/watchlist.dart';
 import 'package:dartz/dartz.dart';
 import '../../../dummy_data/dummy_objects.dart';
@@ -44,9 +42,9 @@ void main() {
         WatchlistLoading(),
         WatchlistLoaded(
           watchlistMovies: tMovieList,
-          watchlistMoviesState: RequestState.Loaded,
+          watchlistMoviesState: RequestState.loaded,
           watchlistSeries: tSeriesList,
-          watchlistSeriesState: RequestState.Loaded,
+          watchlistSeriesState: RequestState.loaded,
         ),
       ],
       verify: (bloc) {

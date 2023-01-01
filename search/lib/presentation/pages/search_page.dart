@@ -14,9 +14,9 @@ class SearchPage extends StatelessWidget {
 
   String buildTitle(SearchType type) {
     switch (type) {
-      case SearchType.MOVIES:
+      case SearchType.movies:
         return 'Movies';
-      case SearchType.TVSERIES:
+      case SearchType.tvSeries:
         return 'Series';
       default:
         return '';
@@ -24,12 +24,12 @@ class SearchPage extends StatelessWidget {
   }
 
   _onSearch(BuildContext context, String query) {
-    if (type == SearchType.MOVIES) {
-      context.read<SearchBloc>().add(OnQueryChanged(query, SearchType.MOVIES));
-    } else if (type == SearchType.TVSERIES) {
+    if (type == SearchType.movies) {
+      context.read<SearchBloc>().add(OnQueryChanged(query, SearchType.movies));
+    } else if (type == SearchType.tvSeries) {
       context
           .read<SearchBloc>()
-          .add(OnQueryChanged(query, SearchType.TVSERIES));
+          .add(OnQueryChanged(query, SearchType.tvSeries));
     }
   }
 
@@ -61,7 +61,7 @@ class SearchPage extends StatelessWidget {
               'Search Result',
               style: kHeading6,
             ),
-            if (type == SearchType.MOVIES)
+            if (type == SearchType.movies)
               BlocBuilder<SearchBloc, SearchState>(builder: (context, state) {
                 if (state is SearchLoading) {
                   return const Center(
@@ -91,7 +91,7 @@ class SearchPage extends StatelessWidget {
                   );
                 }
               }),
-            if (type == SearchType.TVSERIES)
+            if (type == SearchType.tvSeries)
               BlocBuilder<SearchBloc, SearchState>(builder: (context, state) {
                 if (state is SearchLoading) {
                   return const Center(

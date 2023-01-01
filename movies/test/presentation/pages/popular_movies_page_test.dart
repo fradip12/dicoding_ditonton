@@ -64,9 +64,9 @@ void main() {
         testMovieList,
         testMovieList,
         testMovieList,
-        RequestState.Loaded,
-        RequestState.Loaded,
-        RequestState.Loaded,
+        RequestState.loaded,
+        RequestState.loaded,
+        RequestState.loaded,
       );
 
       when(bloc.state).thenReturn(expected);
@@ -85,9 +85,9 @@ void main() {
         testMovieList,
         testMovieList,
         testMovieList,
-        RequestState.Error,
-        RequestState.Error,
-        RequestState.Error,
+        RequestState.error,
+        RequestState.error,
+        RequestState.error,
       );
 
       when(bloc.state).thenReturn(expected);

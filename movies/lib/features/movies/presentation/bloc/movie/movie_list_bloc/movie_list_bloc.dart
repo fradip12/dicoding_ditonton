@@ -21,11 +21,11 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
   final GetNowPlayingMovies getNowPlayingMovies;
   final GetPopularMovies getPopularMovies;
   final GetTopRatedMovies getTopRatedMovies;
-  var nowPlayingState = RequestState.Empty;
+  var nowPlayingState = RequestState.empty;
   var nowPlayingMovies = <Movie>[];
-  var popularState = RequestState.Empty;
+  var popularState = RequestState.empty;
   var popularMovies = <Movie>[];
-  var topRatedState = RequestState.Empty;
+  var topRatedState = RequestState.empty;
   var topRatedMovies = <Movie>[];
   Future<void> _onLoadAll(
     OnLoadAll event,
@@ -36,25 +36,25 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     final popular = await getPopularMovies.execute();
     final topRated = await getTopRatedMovies.execute();
     nowPlaying.fold((l) {
-      nowPlayingState = RequestState.Error;
-      return emit(const MovieListError('Failed'));
+      nowPlayingState = RequestState.error;
+      return emit(MovieListError(l.message));
     }, (r) {
       nowPlayingMovies = r;
-      nowPlayingState = RequestState.Loaded;
+      nowPlayingState = RequestState.loaded;
     });
     popular.fold((l) {
-      popularState = RequestState.Error;
-      return emit(const MovieListError('Failed'));
+      popularState = RequestState.error;
+      return emit(MovieListError(l.message));
     }, (r) {
       popularMovies = r;
-      popularState = RequestState.Loaded;
+      popularState = RequestState.loaded;
     });
     topRated.fold((l) {
-      topRatedState = RequestState.Error;
-      return emit(const MovieListError('Failed'));
+      topRatedState = RequestState.error;
+      return emit(MovieListError(l.message));
     }, (r) {
       topRatedMovies = r;
-      topRatedState = RequestState.Loaded;
+      topRatedState = RequestState.loaded;
       return emit(
         MovieListLoaded(
           nowPlayingMovies,

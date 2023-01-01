@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:common/common.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/features/movies/domain/entities/genre.dart';
-import 'package:movies/features/movies/presentation/bloc/movie/movie_detail_bloc/movie_detail_bloc.dart';
 import 'package:series/domain/entities/tv/tv.dart';
 import '../../../domain/entities/tv/tv_detail.dart';
 import 'package:flutter/material.dart';

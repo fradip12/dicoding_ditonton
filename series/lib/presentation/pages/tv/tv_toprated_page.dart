@@ -38,7 +38,7 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
               );
             } else if (state is TvListLoaded) {
               final data = state.topRated;
-              if (state.topRatedState == RequestState.Error) {
+              if (state.topRatedState == RequestState.error) {
                 return const Text('Failed');
               }
               return ListView.builder(

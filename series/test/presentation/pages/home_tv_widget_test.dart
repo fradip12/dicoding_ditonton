@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:movies/movies.dart';
 import 'package:series/presentation/bloc/tv/tv_list_bloc/tv_list_bloc.dart';
 import 'package:series/presentation/pages/home_tv_widget.dart';
 
@@ -68,9 +67,9 @@ void main() {
         testTvList,
         testTvList,
         testTvList,
-        RequestState.Loaded,
-        RequestState.Loaded,
-        RequestState.Loaded,
+        RequestState.loaded,
+        RequestState.loaded,
+        RequestState.loaded,
       );
 
       when(bloc.state).thenReturn(expected);
@@ -89,9 +88,9 @@ void main() {
         testTvList,
         testTvList,
         testTvList,
-        RequestState.Error,
-        RequestState.Error,
-        RequestState.Error,
+        RequestState.error,
+        RequestState.error,
+        RequestState.error,
       );
 
       when(bloc.state).thenReturn(expected);

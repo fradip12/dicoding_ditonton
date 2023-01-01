@@ -1,11 +1,8 @@
 import 'package:common/common.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
-import 'package:ditonton/ssl/ssl_pinning.dart';
-import 'package:http/http.dart' as http;
+import 'ssl/ssl_pinning.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movies/movies.dart';
-import 'package:search/domain/usecase/search_tv.dart';
-import 'package:search/presentation/bloc/search_bloc.dart';
 import 'package:search/search.dart';
 import 'package:series/series.dart';
 import 'package:watchlist/watchlist.dart';

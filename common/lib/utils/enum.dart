@@ -1,5 +1,5 @@
 enum SearchType {
-  MOVIES,
-  TVSERIES,
+  movies,
+  tvSeries,
 }
 

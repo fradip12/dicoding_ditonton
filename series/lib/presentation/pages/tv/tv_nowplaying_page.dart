@@ -38,7 +38,7 @@ class _NowPlayingTvPageState extends State<NowPlayingTvPage> {
               );
             } else if (state is TvListLoaded) {
               final data = state.nowplaying;
-              if (state.nowPlayingState == RequestState.Error) {
+              if (state.nowPlayingState == RequestState.error) {
                 return const Text('Failed');
               }
               return ListView.builder(

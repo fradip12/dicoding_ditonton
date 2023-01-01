@@ -37,7 +37,7 @@ class _PopularTvPageState extends State<PopularTvPage> {
               );
             } else if (state is TvListLoaded) {
               final data = state.popular;
-              if (state.popularState == RequestState.Error) {
+              if (state.popularState == RequestState.error) {
                 return const Text('Failed');
               }
               return ListView.builder(
