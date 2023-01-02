@@ -99,7 +99,7 @@ void main() {
       expect: () => [
         MovieListLoading(),
         MovieListError(
-         'Failed'
+         'Server Failure'
         ),
       ],
       verify: (bloc) {
